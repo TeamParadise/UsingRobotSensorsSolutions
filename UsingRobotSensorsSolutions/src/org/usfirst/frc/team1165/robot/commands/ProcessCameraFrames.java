@@ -1,18 +1,16 @@
 package org.usfirst.frc.team1165.robot.commands;
 
+import org.usfirst.frc.team1165.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-import org.usfirst.frc.team1165.robot.Robot;
-
 /**
- * Reports the status of the User button on the roboRIO to the SmartDashboard
+ * Intended to be used as a default command to periodically process frames from the camera.
  */
-public class ReportUserButton extends Command
+public class ProcessCameraFrames extends Command
 {
-	public ReportUserButton()
+	public ProcessCameraFrames()
 	{
-		// Use requires() here to declare subsystem dependencies
-		requires(Robot.userButton);
+		requires(Robot.camera);
 	}
 
 	// Called just before this Command runs the first time
@@ -23,7 +21,7 @@ public class ReportUserButton extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		Robot.userButton.report();
+		Robot.camera.processFrame();
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
