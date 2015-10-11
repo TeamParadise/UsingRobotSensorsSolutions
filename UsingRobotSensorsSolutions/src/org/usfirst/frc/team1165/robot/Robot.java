@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
+import org.usfirst.frc.team1165.robot.subsystems.AbsoluteEncoder;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
 import org.usfirst.frc.team1165.robot.subsystems.RoboRIOAccelerometer;
 import org.usfirst.frc.team1165.robot.subsystems.UserButton;
@@ -19,9 +20,11 @@ import org.usfirst.frc.team1165.robot.subsystems.Camera.CameraMode;
  */
 public class Robot extends IterativeRobot
 {
+	// Subsystems:
 	public static final UserButton userButton = new UserButton();
 	public static final RoboRIOAccelerometer roboRIOAccelerometer = new RoboRIOAccelerometer();
 	public static final Camera camera = new Camera(RobotMap.cameraName, CameraMode.SUBSYSTEM);
+	public static final AbsoluteEncoder absoluteEncoder= new AbsoluteEncoder();
 	
 	public static OI oi;
 

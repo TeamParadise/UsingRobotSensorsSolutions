@@ -2,18 +2,20 @@ package org.usfirst.frc.team1165.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-import org.usfirst.frc.team1165.robot.Robot;
+import org.usfirst.frc.team1165.robot.subsystems.ReportableSubsystem;
 
 /**
- * Reports values from the roboRIO accelerometer on the SmartDashboard.
+ * A Command that reports information from a ReportableSubsystem.
  */
-public class ReportRoboRIOAccelerometer extends Command
+public class Reporter extends Command
 {
-
-	public ReportRoboRIOAccelerometer()
+	private ReportableSubsystem reportable;
+	
+	public Reporter(ReportableSubsystem reportable)
 	{
 		// Use requires() here to declare subsystem dependencies
-		requires(Robot.roboRIOAccelerometer);
+		requires(reportable);
+		this.reportable = reportable;
 	}
 
 	// Called just before this Command runs the first time
@@ -24,13 +26,13 @@ public class ReportRoboRIOAccelerometer extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		Robot.roboRIOAccelerometer.report();
+		reportable.report();
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished()
 	{
-		return true;
+		return false;
 	}
 
 	// Called once after isFinished returns true

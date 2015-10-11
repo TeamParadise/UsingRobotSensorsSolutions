@@ -4,18 +4,17 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.nio.file.Paths;
 
-import org.usfirst.frc.team1165.robot.commands.ProcessCameraFrames;
+import org.usfirst.frc.team1165.robot.commands.Reporter;
 
 import com.ni.vision.NIVision;
 import com.ni.vision.NIVision.Image;
 
 import edu.wpi.first.wpilibj.CameraServer;
-import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  * Subsystem to access USB camera.
  */
-public class Camera extends Subsystem implements Runnable
+public class Camera extends ReportableSubsystem implements Runnable
 {
 	public enum CameraMode { SUBSYSTEM, THREAD };
 	
@@ -103,14 +102,14 @@ public class Camera extends Subsystem implements Runnable
 	{
 		if (cameraMode == CameraMode.SUBSYSTEM)
 		{
-			setDefaultCommand(new ProcessCameraFrames());
+			setDefaultCommand(new Reporter(this));
 		}
 	}
 
 	/**
 	 * Grab the current frame from the camera and give it to the camera server.
 	 */
-	public void processFrame()
+	public void report()
 	{
 		NIVision.IMAQdxGrab(session, frame, 1);
 		CameraServer.getInstance().setImage(frame);
@@ -124,7 +123,7 @@ public class Camera extends Subsystem implements Runnable
 	{
 		while (true)
 		{
-			processFrame();
+			report();
 			try
 			{
 				Thread.sleep(interFrameTimeMillis);

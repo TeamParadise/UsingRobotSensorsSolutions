@@ -18,5 +18,9 @@ public class RobotMap
 	// public static int rangefinderPort = 1;
 	// public static int rangefinderModule = 1;
 	
-	public final static String cameraName = "cam12";
+	// Name of camera:
+	public final static String cameraName = "cam11";
+
+	// For accessing the absolute encoder:
+	public static int absoluteEncoderPort = 3;
 }

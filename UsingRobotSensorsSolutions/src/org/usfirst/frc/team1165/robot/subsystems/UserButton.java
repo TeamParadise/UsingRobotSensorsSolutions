@@ -1,23 +1,19 @@
 package org.usfirst.frc.team1165.robot.subsystems;
 
-import org.usfirst.frc.team1165.robot.commands.ReportUserButton;
+import org.usfirst.frc.team1165.robot.commands.Reporter;
 
 import edu.wpi.first.wpilibj.Utility;
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Provides access to the User button on the roboRIO.
  */
-public class UserButton extends Subsystem
+public class UserButton extends ReportableSubsystem
 {
-	// Put methods for controlling this subsystem
-	// here. Call these from Commands.
-
 	public void initDefaultCommand()
 	{
 		// Set the default command for a subsystem here.
-		setDefaultCommand(new ReportUserButton());
+		setDefaultCommand(new Reporter(this));
 	}
 	
 	/**
