@@ -23,4 +23,8 @@ public class RobotMap
 
 	// For accessing the absolute encoder:
 	public static int absoluteEncoderPort = 3;
+	
+	// For accessing the VEX ultrasonic range finder:
+	public static int vexPingChannel = 0;
+	public static int vexEchoChannel = 1;
 }
