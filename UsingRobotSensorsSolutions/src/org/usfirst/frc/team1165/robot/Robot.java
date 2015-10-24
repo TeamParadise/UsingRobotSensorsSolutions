@@ -1,16 +1,21 @@
 package org.usfirst.frc.team1165.robot;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.SerialPort;
+import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team1165.robot.subsystems.AbsoluteEncoder;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
+import org.usfirst.frc.team1165.robot.subsystems.MaxBotixSonar;
 import org.usfirst.frc.team1165.robot.subsystems.RoboRIOAccelerometer;
 import org.usfirst.frc.team1165.robot.subsystems.UserButton;
 import org.usfirst.frc.team1165.robot.subsystems.VexRangeFinder;
 import org.usfirst.frc.team1165.robot.subsystems.Camera.CameraMode;
+import org.usfirst.frc.team1165.robot.subsystems.MaxBotixSonar.Model;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,7 +31,12 @@ public class Robot extends IterativeRobot
 	public static final RoboRIOAccelerometer roboRIOAccelerometer = new RoboRIOAccelerometer();
 //	public static final Camera camera = new Camera(RobotMap.cameraName, CameraMode.SUBSYSTEM);
 //	public static final AbsoluteEncoder absoluteEncoder= new AbsoluteEncoder();
-	public static final VexRangeFinder vexRangeFinder = new VexRangeFinder(RobotMap.vexPingChannel, RobotMap.vexEchoChannel);
+//	public static final VexRangeFinder vexRangeFinder = new VexRangeFinder(RobotMap.vexPingChannel, RobotMap.vexEchoChannel);
+	
+	// We support only one MaxBotix sensor at a time:
+//	public static final MaxBotixSonar mb1013 = new MaxBotixSonar(Model.MB1013, new SerialPort(9600, Port.kOnboard), new AnalogInput(3));
+	public static final MaxBotixSonar mb1200 = new MaxBotixSonar(Model.MB1200, new SerialPort(9600, Port.kOnboard), new AnalogInput(3));
+
 	
 	public static OI oi;
 
