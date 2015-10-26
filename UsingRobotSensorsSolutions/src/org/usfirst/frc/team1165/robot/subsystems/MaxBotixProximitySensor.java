@@ -65,7 +65,7 @@ public class MaxBotixProximitySensor extends ReportableSubsystem implements Runn
 	 */
 	public double getAnalogRangeCm()
 	{
-		return analogPotentiometer == null ? -1 : analogPotentiometer.get();
+		return null == analogPotentiometer ? -1 : analogPotentiometer.get();
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class MaxBotixProximitySensor extends ReportableSubsystem implements Runn
 	 */
 	public double getAnalogRangeInches()
 	{
-		return analogPotentiometer == null ? -1 : analogPotentiometer.get() / cmPerInch;
+		return null == analogPotentiometer ? -1 : analogPotentiometer.get() / cmPerInch;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class MaxBotixProximitySensor extends ReportableSubsystem implements Runn
 	 */
 	public double getSerialRangeInches()
 	{
-		return serialRangeCm == -1 ? -1 : serialRangeCm / cmPerInch;
+		return -1 == serialRangeCm ? -1 : serialRangeCm / cmPerInch;
 	}
 	
 	public void initDefaultCommand()
