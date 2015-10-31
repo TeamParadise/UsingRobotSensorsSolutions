@@ -33,11 +33,11 @@ public class ITG3200 extends SensorBase
 	public static final double DEFAULT_CALIBRATION_TIME = 5.0;
 
 	/**
-	 * The gyro sensitivity in LSB/radian/second. The value retrieved from the
+	 * The gyro sensitivity in LSB/unit/second. The value retrieved from the
 	 * gyro should be divided by this number.
 	 */
-	//public static final double GYRO_SENSITIVITY = 823.626830313;
-	public static final double GYRO_SENSITIVITY = 14.375;
+	public static final double GYRO_SENSITIVITY_RADIANS = 823.626830313;
+	public static final double GYRO_SENSITIVITY_DEGREES = 14.375;
 
 	/**
 	 * The temperature sensor sensitivity in LSB/degree celsius. The value
@@ -397,9 +397,9 @@ public class ITG3200 extends SensorBase
 
 		synchronized (this)
 		{
-			xGyro.rate = (((axes[0] << 8) | (axes[1] & 0xff)) - xGyro.center) / GYRO_SENSITIVITY;
-			yGyro.rate = (((axes[2] << 8) | (axes[3] & 0xff)) - yGyro.center) / GYRO_SENSITIVITY;
-			zGyro.rate = (((axes[4] << 8) | (axes[5] & 0xff)) - zGyro.center) / GYRO_SENSITIVITY;
+			xGyro.rate = (((axes[0] << 8) | (axes[1] & 0xff)) - xGyro.center) / GYRO_SENSITIVITY_DEGREES;
+			yGyro.rate = (((axes[2] << 8) | (axes[3] & 0xff)) - yGyro.center) / GYRO_SENSITIVITY_DEGREES;
+			zGyro.rate = (((axes[4] << 8) | (axes[5] & 0xff)) - zGyro.center) / GYRO_SENSITIVITY_DEGREES;
 
 			xGyro.angle += xGyro.rate / sampleRate;
 			yGyro.angle += yGyro.rate / sampleRate;
