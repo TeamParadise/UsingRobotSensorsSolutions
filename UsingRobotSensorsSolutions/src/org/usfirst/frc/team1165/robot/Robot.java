@@ -1,15 +1,17 @@
 package org.usfirst.frc.team1165.robot;
 
 import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.SerialPort;
-import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team1165.robot.subsystems.AbsoluteEncoder;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
+import org.usfirst.frc.team1165.robot.subsystems.ImuDigitalComboBoard;
 import org.usfirst.frc.team1165.robot.subsystems.MaxBotixProximitySensor;
 import org.usfirst.frc.team1165.robot.subsystems.RoboRIOAccelerometer;
 import org.usfirst.frc.team1165.robot.subsystems.UserButton;
@@ -35,7 +37,9 @@ public class Robot extends IterativeRobot
 	
 	// We support only one MaxBotix sensor at a time:
 //	public static final MaxBotixProximitySensor mb1013 = new MaxBotixProximitySensor(Model.MB1013, new SerialPort(9600, Port.kOnboard), new AnalogInput(3));
-	public static final MaxBotixProximitySensor mb1200 = new MaxBotixProximitySensor(Model.MB1200, new SerialPort(9600, Port.kOnboard), new AnalogInput(3));
+//	public static final MaxBotixProximitySensor mb1200 = new MaxBotixProximitySensor(Model.MB1200, new SerialPort(9600, Port.kOnboard), new AnalogInput(3));
+	
+	public static final ImuDigitalComboBoard imu = new ImuDigitalComboBoard(I2C.Port.kOnboard, new DigitalInput(RobotMap.gyroInterruptChannel));
 
 	
 	public static OI oi;

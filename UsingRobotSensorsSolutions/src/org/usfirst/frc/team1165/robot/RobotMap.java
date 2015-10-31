@@ -27,4 +27,6 @@ public class RobotMap
 	// For accessing the VEX ultrasonic range finder:
 	public static int vexPingChannel = 0;
 	public static int vexEchoChannel = 1;
+	
+	public static int gyroInterruptChannel = 9;
 }
