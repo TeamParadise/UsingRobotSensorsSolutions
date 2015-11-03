@@ -36,8 +36,8 @@ public class Robot extends IterativeRobot
 //	public static final VexRangeFinder vexRangeFinder = new VexRangeFinder(RobotMap.vexPingChannel, RobotMap.vexEchoChannel);
 	
 	// We support only one MaxBotix sensor at a time:
-//	public static final MaxBotixProximitySensor mb1013 = new MaxBotixProximitySensor(Model.MB1013, new SerialPort(9600, Port.kOnboard), new AnalogInput(3));
-//	public static final MaxBotixProximitySensor mb1200 = new MaxBotixProximitySensor(Model.MB1200, new SerialPort(9600, Port.kOnboard), new AnalogInput(3));
+//	public static final MaxBotixProximitySensor mb1013 = new MaxBotixProximitySensor(Model.MB1013, new SerialPort(9600, SerialPort.Port.kOnboard), new AnalogInput(3));
+//	public static final MaxBotixProximitySensor mb1200 = new MaxBotixProximitySensor(Model.MB1200, new SerialPort(9600, SerialPort.Port.kOnboard), new AnalogInput(3));
 	
 	public static final ImuDigitalComboBoard imu = new ImuDigitalComboBoard(I2C.Port.kOnboard, new DigitalInput(RobotMap.gyroInterruptChannel));
 
