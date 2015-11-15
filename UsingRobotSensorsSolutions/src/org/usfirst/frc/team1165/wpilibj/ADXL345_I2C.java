@@ -1,5 +1,5 @@
 // Copied from edu.wpi.first.wpilibj and enhanced to support client specification of the I2C address.
-package org.usfirst.frc.team1165.sensors;
+package org.usfirst.frc.team1165.wpilibj;
 
 import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.SensorBase;

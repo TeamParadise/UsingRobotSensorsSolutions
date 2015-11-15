@@ -3,7 +3,7 @@ package org.usfirst.frc.team1165.robot.subsystems;
 import org.usfirst.frc.team1165.robot.commands.CalibrateImuGyro;
 import org.usfirst.frc.team1165.robot.commands.Reporter;
 import org.usfirst.frc.team1165.robot.commands.ResetImuGyro;
-import org.usfirst.frc.team1165.sensors.ADXL345_I2C;
+import org.usfirst.frc.team1165.wpilibj.ADXL345_I2C;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.I2C;
