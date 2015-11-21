@@ -13,6 +13,7 @@ import org.usfirst.frc.team1165.robot.subsystems.AbsoluteEncoder;
 import org.usfirst.frc.team1165.robot.subsystems.Camera;
 import org.usfirst.frc.team1165.robot.subsystems.ImuDigitalComboBoard;
 import org.usfirst.frc.team1165.robot.subsystems.MaxBotixProximitySensor;
+import org.usfirst.frc.team1165.robot.subsystems.PidDemo;
 import org.usfirst.frc.team1165.robot.subsystems.RoboRIOAccelerometer;
 import org.usfirst.frc.team1165.robot.subsystems.UserButton;
 import org.usfirst.frc.team1165.robot.subsystems.VexRangeFinder;
@@ -32,15 +33,16 @@ public class Robot extends IterativeRobot
 	public static final UserButton userButton = new UserButton();
 	public static final RoboRIOAccelerometer roboRIOAccelerometer = new RoboRIOAccelerometer();
 //	public static final Camera camera = new Camera(RobotMap.cameraName, CameraMode.SUBSYSTEM);
-//	public static final AbsoluteEncoder absoluteEncoder= new AbsoluteEncoder();
+	public static final AbsoluteEncoder absoluteEncoder= new AbsoluteEncoder();
 //	public static final VexRangeFinder vexRangeFinder = new VexRangeFinder(RobotMap.vexPingChannel, RobotMap.vexEchoChannel);
 	
 	// We support only one MaxBotix sensor at a time:
 //	public static final MaxBotixProximitySensor mb1013 = new MaxBotixProximitySensor(Model.MB1013, new SerialPort(9600, SerialPort.Port.kOnboard), new AnalogInput(3));
 //	public static final MaxBotixProximitySensor mb1200 = new MaxBotixProximitySensor(Model.MB1200, new SerialPort(9600, SerialPort.Port.kOnboard), new AnalogInput(3));
 	
-	public static final ImuDigitalComboBoard imu = new ImuDigitalComboBoard(I2C.Port.kOnboard, new DigitalInput(RobotMap.gyroInterruptChannel));
-
+//	public static final ImuDigitalComboBoard imu = new ImuDigitalComboBoard(I2C.Port.kOnboard, new DigitalInput(RobotMap.gyroInterruptChannel));
+	
+	public static final PidDemo pidDemo = new PidDemo();
 	
 	public static OI oi;
 

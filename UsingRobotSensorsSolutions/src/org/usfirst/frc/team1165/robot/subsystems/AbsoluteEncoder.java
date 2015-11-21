@@ -5,12 +5,13 @@ import org.usfirst.frc.team1165.robot.commands.Reporter;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
+import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Class that provides access to the MA3-A10-250-N Absolute Encoder.
  */
-public class AbsoluteEncoder extends ReportableSubsystem
+public class AbsoluteEncoder extends ReportableSubsystem implements PIDSource
 {
 	private AnalogInput analogInput = new AnalogInput(RobotMap.absoluteEncoderPort);
 	private AnalogPotentiometer encoder = new AnalogPotentiometer(analogInput, 360.0, 0);
@@ -22,11 +23,27 @@ public class AbsoluteEncoder extends ReportableSubsystem
 	{
 		return encoder.get();
 	}
+	
+	/**
+	 * Returns the underlying analog potentiometer.
+	 */
+	public AnalogPotentiometer getPot()
+	{
+		return encoder;
+	}
 
 	public void initDefaultCommand()
 	{
 		// Set the default command for a subsystem here.
 		setDefaultCommand(new Reporter(this));
+	}
+	
+	/**
+	 * Provides input for a PID controller.
+	 */
+	public double pidGet()
+	{
+		return get();
 	}
 	
 	/**

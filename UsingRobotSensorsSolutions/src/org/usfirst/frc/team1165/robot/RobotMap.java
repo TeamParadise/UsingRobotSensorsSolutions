@@ -22,11 +22,18 @@ public class RobotMap
 	public final static String cameraName = "cam11";
 
 	// For accessing the absolute encoder:
-	public static int absoluteEncoderPort = 3;
+	public static int absoluteEncoderPort = 2;
+	
+	// Analog output channels for LEDs:
+	public static int redLedChannel = 1;
+	public static int greenLedChannel = 0;
 	
 	// For accessing the VEX ultrasonic range finder:
 	public static int vexPingChannel = 0;
 	public static int vexEchoChannel = 1;
 	
+	// Digital input channel for receiving inputs from gyro:
 	public static int gyroInterruptChannel = 9;
+	
+	public static String pidDemoSetpointKey = "PID Demo Setpoint";
 }
