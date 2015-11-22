@@ -38,8 +38,8 @@ public class SetPidDemoSetpoint extends Command
 			setpoint = SmartDashboard.getNumber(setpointKey);
 		}
 		
-		Robot.pidDemo.enable();
 		Robot.pidDemo.setSetpoint(setpoint);
+		Robot.pidDemo.enable();
 	}
 
 	// Called repeatedly when this Command is scheduled to run

@@ -19,7 +19,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class PidDemo extends PIDSubsystem
 {
-	private final static double kP = 0.1;
+	private final static double kP = 0.05;
 	private final static double kI = 0.0;
 	private final static double kD = 0;
 	
