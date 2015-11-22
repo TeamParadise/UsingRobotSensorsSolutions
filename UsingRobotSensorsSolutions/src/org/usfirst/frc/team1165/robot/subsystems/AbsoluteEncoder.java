@@ -32,6 +32,10 @@ public class AbsoluteEncoder extends ReportableSubsystem implements PIDSource
 		return encoder;
 	}
 
+	/**
+	 * Set default command to report status on SmartDashboard.
+	 */
+	@Override
 	public void initDefaultCommand()
 	{
 		// Set the default command for a subsystem here.
@@ -41,6 +45,7 @@ public class AbsoluteEncoder extends ReportableSubsystem implements PIDSource
 	/**
 	 * Provides input for a PID controller.
 	 */
+	@Override
 	public double pidGet()
 	{
 		return get();

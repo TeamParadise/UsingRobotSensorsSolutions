@@ -45,6 +45,9 @@ public class PidLeds implements PIDOutput, LiveWindowSendable
 
 	/**
 	 * Sets the PID output value. Acceptable range is -1 to +1, inclusive.
+	 * Positive values pulse green LED at a rate of (10 * output) Hz.
+	 * Negative values pulse red LED at a rate of (-10 * output) Hz.
+	 * Non-pulsing LEDs are set idle.
 	 */
 	@Override
 	public void pidWrite(double output)
